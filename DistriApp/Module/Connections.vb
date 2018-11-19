@@ -145,44 +145,7 @@ Module Connections
     Public Sub WarningMessage(ByVal Mess As String)
         MsgBox(Mess, MsgBoxStyle.Critical, CompName)
     End Sub
-    Public Function TransactionSlNo(ByVal Operation As String) As Integer
-        Select Case Operation
-            Case "PO"
-                TransactionSlNo = "10"
-            Case "GRN"
-                TransactionSlNo = "20"
-            Case "MPL"
-                TransactionSlNo = "30"
-            Case "DPL"
-                TransactionSlNo = "40"
-            Case "JOD"
-                TransactionSlNo = "50"
-            Case "SOD"
-                TransactionSlNo = "60"
-            Case "PLN"
-                TransactionSlNo = "70"
-            Case "INV"
-                TransactionSlNo = "80"
-            Case "INS"
-                TransactionSlNo = "11"
-            Case "DSG"
-                TransactionSlNo = "12"
-            Case "MRN"
-                TransactionSlNo = "13"
-            Case "MRJ"
-                TransactionSlNo = "14"
-            Case "FGN"
-                TransactionSlNo = "15"
-            Case "SRN"
-                TransactionSlNo = "16"
-            Case "GPN"
-                TransactionSlNo = "17"
-            Case "BOX"
-                TransactionSlNo = "21"
-            Case "PAL"
-                TransactionSlNo = "22"
-        End Select
-    End Function
+
     Public Function TransactionCode(ByVal PrimaryKeyField As String, ByVal FinYear As Integer, ByVal TableName As String) As Double
         cmd.CommandText = "select isnull (MAX(" & PrimaryKeyField & ")," & FinYear & ") + 1 from " & TableName & " "
         cmd.Connection = con
